@@ -36,8 +36,10 @@ After installing the scripts, follow these steps to start using the bot:
 
 1. Open Telegram Web in your browser.
 2. Navigate to the X Empire game.
-3. Start the bot in your browser.
-4. The bot will begin clicking on the Musk and collecting points.
+3. Open DevTools. For Chrome 	`Ctrl + Shift + J` or `Cmd + Option + J`.
+4. Toggle device toolbar and select iPhone 14.
+4. Start the bot in your browser.
+5. The bot will begin clicking on the Musk and collecting points.
 
 ## Scripts
 

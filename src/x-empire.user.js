@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         X Empire [SmartBot]
 // @namespace    https://smartbot.black/
-// @version      1.0.0
+// @version      1.0.1
 // @description  Bot for playing x-empire in telegram
 // @author       Smartbot Team
 // @match        https://game.muskempire.io/*
@@ -92,6 +92,10 @@
 
 	while (true) {
 		try {
+			[...document.querySelectorAll("span")]
+				.find((button) => button.innerText.includes("Claim"))
+				?.click();
+
 			const currentEnergy = getEnergy();
 
 			if (currentEnergy > getRandomInt(10, 200)) {
