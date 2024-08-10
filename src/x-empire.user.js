@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         X Empire [SmartBot]
 // @namespace    https://smartbot.black/
-// @version      1.1.0
+// @version      1.1.1
 // @description  Bot for playing x-empire in telegram
 // @author       Smartbot Team
 // @match        https://game.muskempire.io/*
@@ -38,7 +38,9 @@
 		Number.parseInt(
 			document
 				.querySelector(".battery")
-				?.nextSibling?.innerText?.replace(",", "") ?? 1000,
+				?.nextSibling?.innerText?.replace(",", "")
+				.replace(".", "")
+				.replace(/\s/g, "") ?? 1000,
 		);
 
 	const getRandomInt = (min, max) =>
