@@ -4,7 +4,7 @@
 // @version      1.2.0
 // @description  Bot for playing x-empire in telegram
 // @author       Smartbot Team
-// @match        https://game.muskempire.io/*
+// @match        https://game.xempire.io/*
 // @icon         https://game.muskempire.io/favicon-32x32.png
 // @grant        none
 // ==/UserScript==
@@ -40,7 +40,8 @@
 				.querySelector(".battery")
 				?.nextSibling?.innerText?.replace(",", "")
 				.replace(".", "")
-				.replace(/\s/g, "") ?? 1000,
+				.replace(/\s/g, "")
+				.replace("K", "000") ?? 1000,
 		);
 
 	const getRandomInt = (min, max) =>
@@ -125,3 +126,5 @@
 		}
 	}
 })();
+
+// Claim rewards
