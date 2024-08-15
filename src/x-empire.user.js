@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         X Empire [SmartBot]
 // @namespace    https://smartbot.black/
-// @version      1.3.0
+// @version      1.4.0
 // @description  Bot for playing x-empire in telegram
 // @author       Smartbot Team
 // @match        https://game.xempire.io/*
@@ -99,6 +99,7 @@
 				[...document.querySelectorAll("span")]
 					.find((button) => button.innerText.includes("Claim"))
 					?.click();
+				await new Promise((res) => setTimeout(res, getRandomInt(1, 10) * 1e3));
 			} catch (err) {
 				console.error(err);
 			}
@@ -107,6 +108,7 @@
 				[...document.querySelectorAll("span")]
 					.find((button) => button.innerText.includes("I'm good!"))
 					?.click();
+				await new Promise((res) => setTimeout(res, getRandomInt(1, 10) * 1e3));
 			} catch (err) {
 				console.error(err);
 			}
