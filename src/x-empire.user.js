@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         X Empire [SmartBot]
 // @namespace    https://smartbot.black/
-// @version      1.4.0
+// @version      1.4.1
 // @description  Bot for playing x-empire in telegram
 // @author       Smartbot Team
 // @match        https://game.xempire.io/*
@@ -96,19 +96,31 @@
 	while (true) {
 		try {
 			try {
-				[...document.querySelectorAll("span")]
-					.find((button) => button.innerText.includes("Claim"))
-					?.click();
-				await new Promise((res) => setTimeout(res, getRandomInt(1, 10) * 1e3));
+				const btnClaim = [...document.querySelectorAll("span")].find((button) =>
+					button.innerText.includes("Claim"),
+				);
+
+				if (btnClaim) {
+					btnClaim.click();
+					await new Promise((res) =>
+						setTimeout(res, getRandomInt(1, 10) * 1e3),
+					);
+				}
 			} catch (err) {
 				console.error(err);
 			}
 
 			try {
-				[...document.querySelectorAll("span")]
-					.find((button) => button.innerText.includes("I'm good!"))
-					?.click();
-				await new Promise((res) => setTimeout(res, getRandomInt(1, 10) * 1e3));
+				const btnGood = [...document.querySelectorAll("span")].find((button) =>
+					button.innerText.includes("I'm good!"),
+				);
+
+				if (btnGood) {
+					btnGood.click();
+					await new Promise((res) =>
+						setTimeout(res, getRandomInt(1, 10) * 1e3),
+					);
+				}
 			} catch (err) {
 				console.error(err);
 			}
