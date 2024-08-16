@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         X Empire [SmartBot]
 // @namespace    https://smartbot.black/
-// @version      1.4.1
+// @version      1.4.2
 // @description  Bot for playing x-empire in telegram
 // @author       Smartbot Team
 // @match        https://game.xempire.io/*
@@ -100,7 +100,7 @@
 					button.innerText.includes("Claim"),
 				);
 
-				if (btnClaim) {
+				if (btnClaim?.offsetParent) {
 					btnClaim.click();
 					await new Promise((res) =>
 						setTimeout(res, getRandomInt(1, 10) * 1e3),
@@ -115,7 +115,7 @@
 					button.innerText.includes("I'm good!"),
 				);
 
-				if (btnGood) {
+				if (btnGood?.offsetParent) {
 					btnGood.click();
 					await new Promise((res) =>
 						setTimeout(res, getRandomInt(1, 10) * 1e3),
@@ -130,7 +130,7 @@
 					(button) => button.innerText.includes("Claim Reward"),
 				);
 
-				if (btnClaimReward) {
+				if (btnClaimReward?.offsetParent) {
 					btnClaimReward.click();
 					await new Promise((res) =>
 						setTimeout(res, getRandomInt(1, 10) * 1e3),
