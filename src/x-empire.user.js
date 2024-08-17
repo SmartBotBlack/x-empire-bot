@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         X Empire [SmartBot]
 // @namespace    https://smartbot.black/
-// @version      1.4.2
+// @version      1.4.5
 // @description  Bot for playing x-empire in telegram
 // @author       Smartbot Team
 // @match        https://game.xempire.io/*
@@ -34,16 +34,22 @@
 		get: () => "iPhone",
 	});
 
-	const getEnergy = () =>
-		Number.parseInt(
-			document
-				.querySelector(".battery")
-				?.nextSibling?.innerText?.replace(",", "")
-				.replace(".", "")
-				.replace(/\s/g, "")
-				.replace("K", "000")
-				.replace("M", "000000") ?? 1000,
+	const getEnergy = () => {
+		const sourceEnergy =
+			document.querySelector(".battery")?.nextSibling?.innerText ?? "1000";
+
+		let floatEnergy = Number.parseFloat(
+			sourceEnergy?.replace(",", "").replace(/\s/g, ""),
 		);
+
+		if (sourceEnergy.includes("K")) {
+			floatEnergy *= 1000;
+		} else if (sourceEnergy.includes("M")) {
+			floatEnergy *= 1000000;
+		}
+
+		return floatEnergy;
+	};
 
 	const getRandomInt = (min, max) =>
 		Math.floor(Math.random() * (max - min + 1)) + min;
