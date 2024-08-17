@@ -41,7 +41,8 @@
 				?.nextSibling?.innerText?.replace(",", "")
 				.replace(".", "")
 				.replace(/\s/g, "")
-				.replace("K", "000") ?? 1000,
+				.replace("K", "000")
+				.replace("M", "000000") ?? 1000,
 		);
 
 	const getRandomInt = (min, max) =>
@@ -93,6 +94,8 @@
 		image.dispatchEvent(pointerupEvent);
 	};
 
+	let maxEnergy = 1000;
+
 	while (true) {
 		try {
 			try {
@@ -143,7 +146,11 @@
 
 			const currentEnergy = getEnergy();
 
-			if (currentEnergy > getRandomInt(10, 200)) {
+			if (currentEnergy > maxEnergy) {
+				maxEnergy = currentEnergy;
+			}
+
+			if (currentEnergy > getRandomInt(100, maxEnergy * 0.2)) {
 				await emulateMobileTapOnImage(document.querySelector("#oreol"));
 			} else {
 				await new Promise((res) =>
