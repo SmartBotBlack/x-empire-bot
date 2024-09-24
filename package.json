@@ -1,12 +1,12 @@
 {
-  "name": "x-empire",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": ["muskempire", "musk-empire", "x-empire", "xempire", "bot"],
+	"name": "x-empire",
+	"version": "1.1.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": ["muskempire", "musk-empire", "x-empire", "xempire", "bot"],
 	"author": "SmartBot Team",
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3"

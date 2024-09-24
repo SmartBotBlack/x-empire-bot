@@ -46,6 +46,8 @@
 			floatEnergy *= 1000;
 		} else if (sourceEnergy.includes("M")) {
 			floatEnergy *= 1000000;
+		} else if (sourceEnergy.includes("B")) {
+			floatEnergy *= 1000000000;
 		}
 
 		return floatEnergy;
